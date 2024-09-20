@@ -28,7 +28,9 @@ const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-  console.log('Swagger docs at http://localhost:3000/api-docs');
-})
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+//   console.log('Swagger docs at http://localhost:3000/api-docs');
+// })
+
+module.exports = app

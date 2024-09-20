@@ -9,7 +9,7 @@
   "test": {
     "username": "postgres",
     "password": "postgres",
-    "database": "eigen_tech_test",
+    "database": "eigen_tech_test_jest",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
