@@ -22,7 +22,6 @@
                 res.status(401).json({ message: "Member does not borrow the book" })
                 break;
             default:
-                console.log("error di server", err);
                 res.status(500).json({ message: "Internal server error" })
                 break;
         }
