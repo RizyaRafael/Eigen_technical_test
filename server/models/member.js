@@ -48,6 +48,10 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+      penalized: {
+        type: DataTypes.DATE,
+        allowNull: true
+      }
   }, {
     sequelize,
     modelName: 'Member',

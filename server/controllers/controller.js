@@ -15,21 +15,21 @@ class Controller {
             }
 
             // Check if member is penelized
-            if (checkMember.penalized) {
-                const checkDuration = new Date() - checkMember.penalized
-                if (checkDuration < 0) {
-                    throw { name: "MEMBER_PENALIZED" }
-                } else {
-                    await Member.update(
-                        { penalized: null },
-                        {
-                            where: {
-                                code: memberCode
-                            }
+            console.log(checkMember, "ini member yang buat");
+            
+            if (checkMember.penalized && new Date() < checkMember.penalized) {
+                throw { name: "MEMBER_PENALIZED" };
+            } else {
+                await Member.update(
+                    { penalized: null },
+                    {
+                        where: {
+                            code: memberCode
                         }
-                    )
-                }
+                    }
+                )
             }
+
 
             // Check if the book registered
             const checkBook = await Book.findOne({ where: { code: bookCode } })
